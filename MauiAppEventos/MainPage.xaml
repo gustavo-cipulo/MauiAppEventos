@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="MauiAppEventos.MainPage"
+    Title="Cadastro de Eventos"
+    BackgroundColor="#F0F4FA">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="20,25"
+            Spacing="18">
+
+            <!-- CABEÇALHO -->
+            <VerticalStackLayout Spacing="5">
+
+                <Label
+                    Text="EVENTOS PREMIUM"
+                    FontFamily="KalamBold"
+                    FontSize="34"
+                    TextColor="#183153"
+                    HorizontalTextAlignment="Center" /> 
+
+                <Label
+                    Text="Organize seu próximo evento"
+                    FontSize="14"
+                    TextColor="#64748B"
+                    HorizontalTextAlignment="Center" />
+
+            </VerticalStackLayout>
+
+            <!-- FORMULÁRIO -->
+            <Border
+                BackgroundColor="White"
+                Stroke="#DEE7F2"
+                StrokeShape="RoundRectangle 20"
+                Padding="20">
+
+                <VerticalStackLayout Spacing="14">
+
+                    <Label
+                        Text="Cadastro de Evento"
+                        FontFamily="KalamBold"
+                        FontSize="25"
+                        TextColor="#183153" />
+                    <BoxView
+                        HeightRequest="1"
+                        Color="#E2E8F0" />
+
+                    <!-- NOME -->
+                    <Label
+                        Text="Nome do evento"
+                        FontAttributes="Bold"
+                        TextColor="#334155" />
+
+                    <Border
+                        BackgroundColor="#F8FAFD"
+                        Stroke="#DCE5F0"
+                        StrokeShape="RoundRectangle 10"
+                        Padding="10,0">
+
+                        <Entry
+                            x:Name="ent_nome"
+                            Placeholder="Digite o nome do evento"
+                            TextColor="#183153" />
+
+                    </Border>
+
+                    <!-- DATAS -->
+                    <Label
+                        Text="Período do evento"
+                        FontAttributes="Bold"
+                        TextColor="#334155" />
+
+                    <Grid
+                        ColumnDefinitions="*,*"
+                        ColumnSpacing="10">
+
+                        <Border
+                            Grid.Column="0"
+                            BackgroundColor="#F8FAFD"
+                            Stroke="#DCE5F0"
+                            StrokeShape="RoundRectangle 10"
+                            Padding="8">
+
+                            <VerticalStackLayout Spacing="5">
+
+                                <Label
+                                    Text="Data de início"
+                                    FontSize="12"
+                                    TextColor="#64748B" />
+
+                                <DatePicker
+                                    x:Name="dtp_inicio"
+                                    Format="dd/MM/yyyy"
+                                    FontSize="13"
+                                    TextColor="#183153"
+                                    DateSelected="dtp_inicio_DateSelected" />
+
+                            </VerticalStackLayout>
+                        </Border>
+
+                        <Border
+                            Grid.Column="1"
+                            BackgroundColor="#F8FAFD"
+                            Stroke="#DCE5F0"
+                            StrokeShape="RoundRectangle 10"
+                            Padding="8">
+
+                            <VerticalStackLayout Spacing="5">
+
+                                <Label
+                                    Text="Data de término"
+                                    FontSize="12"
+                                    TextColor="#64748B" />
+
+                                <DatePicker
+                                    x:Name="dtp_termino"
+                                    Format="dd/MM/yyyy"
+                                    FontSize="13"
+                                    TextColor="#183153" />
+
+                            </VerticalStackLayout>
+                        </Border>
+
+                    </Grid>
+
+                    <!-- PARTICIPANTES -->
+                    <Label
+                        Text="Número de participantes"
+                        FontAttributes="Bold"
+                        TextColor="#334155" />
+
+                    <Border
+                        BackgroundColor="#F8FAFD"
+                        Stroke="#DCE5F0"
+                        StrokeShape="RoundRectangle 10"
+                        Padding="10,0">
+
+                        <Entry
+                            x:Name="ent_participantes"
+                            Placeholder="Ex.: 50"
+                            Keyboard="Numeric"
+                            TextColor="#183153" />
+
+                    </Border>
+
+                    <!-- LOCAL -->
+                    <Label
+                        Text="Local do evento"
+                        FontAttributes="Bold"
+                        TextColor="#334155" />
+
+                    <Border
+                        BackgroundColor="#F8FAFD"
+                        Stroke="#DCE5F0"
+                        StrokeShape="RoundRectangle 10"
+                        Padding="10,0">
+
+                        <Entry
+                            x:Name="ent_local"
+                            Placeholder="Ex.: Centro de Convenções"
+                            TextColor="#183153" />
+
+                    </Border>
+
+                    <!-- CUSTO -->
+                    <Label
+                        Text="Custo por participante (R$)"
+                        FontAttributes="Bold"
+                        TextColor="#334155" />
+
+                    <Border
+                        BackgroundColor="#F8FAFD"
+                        Stroke="#DCE5F0"
+                        StrokeShape="RoundRectangle 10"
+                        Padding="10,0">
+
+                        <Entry
+                            x:Name="ent_custo"
+                            Placeholder="Ex.: 25,00"
+                            Keyboard="Numeric"
+                            TextColor="#183153" />
+
+                    </Border>
+
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- BOTÃO -->
+            <Button
+                Text="CADASTRAR EVENTO"
+                BackgroundColor="#2563EB"
+                TextColor="White"
+                FontAttributes="Bold"
+                CornerRadius="13"
+                HeightRequest="54"
+                Clicked="Cadastrar_Clicked" />
+
+            <Label
+                Text="EVENTOS PREMIUM  •  2026"
+                FontSize="11"
+                TextColor="#94A3B8"
+                HorizontalTextAlignment="Center" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
